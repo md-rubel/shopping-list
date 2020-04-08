@@ -26,10 +26,8 @@ const App = () => {
     },
   ]);
 
-  // Flag true if user is currently editing an item
   const [editStatus, editStatusChange] = useState(false);
 
-  // State to capture information about the item being edited
   const [editItemDetail, editItemDetailChange] = useState({
     id: null,
     text: null,
@@ -43,18 +41,15 @@ const App = () => {
     });
   };
 
-  // Submit the users edits to the overall items state
   const saveEditItem = (id, text) => {
     setItems(prevItems => {
       return prevItems.map(item =>
         item.id === editItemDetail.id ? {id, text: editItemDetail.text} : item,
       );
     });
-    // Flip edit status back to false
     editStatusChange(!editStatus);
   };
 
-  // Event handler to capture users text input as they edit an item
   const handleEditChange = text => {
     editItemDetailChange({id: editItemDetail.id, text});
   };
@@ -79,7 +74,6 @@ const App = () => {
     }
   };
 
-  // capture old items ID and text when user clicks edit
   const editItem = (id, text) => {
     editItemDetailChange({
       id,
@@ -91,12 +85,10 @@ const App = () => {
   const itemChecked = (id, text) => {
     const isChecked = checkedItems.filter(checkedItem => checkedItem.id === id);
     isChecked.length
-      ? // remove item from checked items state (uncheck)
-        checkedItemChange(prevItems => {
+      ? checkedItemChange(prevItems => {
           return [...prevItems.filter(item => item.id !== id)];
         })
-      : // Add item to checked items state
-        checkedItemChange(prevItems => {
+      : checkedItemChange(prevItems => {
           return [...prevItems.filter(item => item.id !== id), {id, text}];
         });
   };
