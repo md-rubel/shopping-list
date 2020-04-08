@@ -1,0 +1,6 @@
+module Pods_TeAS_TeASTests {
+  umbrella header "Pods-TeAS-TeASTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

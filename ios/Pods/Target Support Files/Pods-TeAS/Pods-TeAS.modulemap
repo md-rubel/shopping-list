@@ -1,0 +1,6 @@
+module Pods_TeAS {
+  umbrella header "Pods-TeAS-umbrella.h"
+
+  export *
+  module * { export * }
+}
