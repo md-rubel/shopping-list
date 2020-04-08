@@ -1,6 +1,6 @@
 # Simple React-Native App Named: _Shopping List_
 
-This is _practise project_ for iOS app development course.
+This is _practise project_ for React Native course.
 
 **What I have learned here:**
 
